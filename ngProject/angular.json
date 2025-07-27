@@ -27,9 +27,14 @@
               }
             ],
             "styles": [
+              "./public/plugin/bootstrap-5.2.0-dist/css/bootstrap.min.css",
+              "./public/plugin/font-awesome-6-pro-main/css/all.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./public/plugin/bootstrap-5.2.0-dist/js/bootstrap.min.js",
+              "./public/plugin/jquery-1.12.4-dist/jquery-1.12.4.min.js"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
