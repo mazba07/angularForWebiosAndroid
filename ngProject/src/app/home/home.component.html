@@ -1,0 +1,50 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <img src="{{mockData.body.message}}" class="img-fluid" alt="...">
+
+        </div>
+    </div>
+</div> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-10">
+            <div class="card shadow-sm rounded">
+                <div class="card-body text-center">
+
+                    <!-- Profile Picture -->
+                    <img src="{{mockData.body.results[0].picture.large}}" alt="User Avatar" class="rounded-circle mb-3"
+                        width="120" height="120" />
+
+                    <!-- User Name -->
+                    <h4 class="card-title">{{mockData.body.results[0].name.title}}</h4>
+                    <h4 class="card-title">
+                        {{mockData.body.results[0].name.first}}
+                        {{mockData.body.results[0].name.last}}
+                    </h4>
+                    <p class="text-muted">Location: {{mockData.body.results[0].location.city}},
+                        {{mockData.body.results[0].location.country}}
+                    </p>
+
+                    <!-- Divider -->
+                    <hr />
+
+                    <!-- User Info List -->
+                    <div class="text-start">
+                        <p><strong>Email:</strong> {{mockData.body.results[0].email}}</p>
+                        <p><strong>Phone:</strong> {{mockData.body.results[0].phone}}</p>
+                    </div>
+
+                    <div class="text-start">
+                        <p><strong>Email:</strong> {{mockData.body.results[0].email}}</p>
+                        <p><strong>Phone:</strong> {{mockData.body.results[0].phone}}</p>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

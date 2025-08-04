@@ -7,8 +7,8 @@ import { Observable, throwError, map, catchError } from 'rxjs';
 })
 export class DataService {
 
-  // public baseURL = "https://1d9d857a-4e50-4c6c-8dcf-ca3efeab783d.mock.pstmn.io/api/";
-  public baseURL = "http://34.133.122.128:8080/api/";
+  public baseURL = "https://randomuser.me/";
+  // public baseURL = "http://34.133.122.128:8080/api/";
 
   constructor(private http: HttpClient) { }
 
@@ -31,9 +31,6 @@ export class DataService {
 
     return this.http.get(url, { headers: setHeaders, observe: 'response' })
       .pipe(map((data: any) => {
-        //handle api 200 response code here or you wanted to manipulate to response
-        console.log("----------------------------");
-        console.log(data);
         return data;
       }),
         catchError(this.handleError)
@@ -54,8 +51,6 @@ export class DataService {
     return this.http.post(url, postData, { headers: setHeaders, observe: 'response' })
       .pipe(map((data: any) => {
         //handle api 200 response code here or you wanted to manipulate to response
-        console.log("----------------------------");
-        console.log(data);
         return data;
       }),
         catchError(this.handleError)
@@ -90,34 +85,10 @@ export class DataService {
     return this.http.post(url, body.toString(), { headers: headers, observe: 'response' })
       .pipe(map((data: any) => {
         //handle api 200 response code here or you wanted to manipulate to response
-        console.log("----------------------------");
-        console.log(data);
         return data;
       }),
         catchError(this.handleError)
       );
   }
 
-
-  sendExternalServerEmail(url: string, auth: boolean = false): Observable<any> {
-    var url = url;
-    var setHeaders: any;
-
-    if (auth) {
-      setHeaders = new HttpHeaders().set(
-        "Authorization",
-        'Bearer ' + ''
-      );
-    }
-
-    return this.http.get(url, { headers: setHeaders, observe: 'response' })
-      .pipe(map((data: any) => {
-        //handle api 200 response code here or you wanted to manipulate to response
-        console.log("----------------------------");
-        console.log(data);
-        return data;
-      }),
-        catchError(this.handleError)
-      );
-  }
 }
